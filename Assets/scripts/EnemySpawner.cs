@@ -62,7 +62,7 @@ namespace GGJ2024_GiggleTeddy
                 case 3:
                     if (spawnTimer >= 1)
                     {
-                        spawnTime = 5;
+                        spawnTime = 8;
                         spawnTimer = 0;
                         maxMovingSpeed = 6;
                         BuildEnemy();
@@ -82,11 +82,26 @@ namespace GGJ2024_GiggleTeddy
         #region PRIVATE METHODS
         void BuildEnemy()
         {
-            int bothSide = Random.Range(0, 2);
-            if (bothSide == 0)
+            if (GameControl.Instance.GetLevel() == 3)
             {
-                InstantiateEnemy(spawnerRightPosition.position, spawnerRightPosition.rotation, movingSpeed, enemyTargetRight.position, true);
-                InstantiateEnemy(spawnerLeftPosition.position, spawnerLeftPosition.rotation, movingSpeed, enemyTargetLeft.position, false);
+                int bothSide = Random.Range(0, 2);
+                if (bothSide == 0)
+                {
+                    InstantiateEnemy(spawnerRightPosition.position, spawnerRightPosition.rotation, movingSpeed, enemyTargetRight.position, true);
+                    InstantiateEnemy(spawnerLeftPosition.position, spawnerLeftPosition.rotation, movingSpeed, enemyTargetLeft.position, false);
+                }
+                else
+                {
+                    int rd = Random.Range(0, 2);
+                    if (rd == 0)
+                    {
+                        InstantiateEnemy(spawnerRightPosition.position, spawnerRightPosition.rotation, movingSpeed, enemyTargetRight.position, true);
+                    }
+                    else
+                    {
+                        InstantiateEnemy(spawnerLeftPosition.position, spawnerLeftPosition.rotation, movingSpeed, enemyTargetLeft.position, false);
+                    }
+                }
             }
             else
             {

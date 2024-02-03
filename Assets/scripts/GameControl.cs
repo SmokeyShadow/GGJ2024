@@ -22,7 +22,7 @@ namespace GGJ2024_GiggleTeddy
         #region PRIVATE FIELDS
         float timer = 0f;
         int currentLevel = 1;
-        float changeDifficultyTime = 40;
+        float changeDifficultyTime = 60;
         #endregion
 
         #region PROPERTIES

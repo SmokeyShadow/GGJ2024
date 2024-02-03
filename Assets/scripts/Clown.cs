@@ -180,8 +180,8 @@ namespace GGJ2024_GiggleTeddy
         {
             yield return new WaitForSeconds(1);
             animator.SetTrigger("Press Nose");
-            SoundPlayer.Instance.PlaySound(SoundPlayer.SoundClip.PressingNose);
             yield return new WaitForSeconds(1);
+            SoundPlayer.Instance.PlaySound(SoundPlayer.SoundClip.PressingNose);
             hitBox = false;
             afterHit = false;
             go.Laugh();
